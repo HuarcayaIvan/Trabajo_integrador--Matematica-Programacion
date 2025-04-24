@@ -15,11 +15,12 @@ Ambas implementaciones determinan la aceptación o rechazo de clientes según tr
 - Presupuesto (para uso personal)
 
 ## Estructura del Proyecto
+```bash
 .
 ├── circuito_logico_seguros.py # Versión con simulación de circuito lógico
 ├── seguros.py # Versión con estructura condicional clásica
 └── README.md # Documentación del proyecto
-
+```
 
 ## Características Principales
 ### 1. `circuito_logico_seguros.py`
