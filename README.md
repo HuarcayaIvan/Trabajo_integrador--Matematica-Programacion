@@ -34,7 +34,7 @@ Ambas implementaciones determinan la aceptación o rechazo de clientes según tr
   )
 
 - Diagrama lógico:
-
+```bash
     VERAZ ───[NOT]───────────────────┐
                                      AND_FINAL ─── Salida
     COMERCIAL ────────────────┐      │
@@ -42,7 +42,7 @@ Ambas implementaciones determinan la aceptación o rechazo de clientes según tr
          └─[NOT]─┐            │
                   AND1 ───────┘        
     PRESUPUESTO ───┘
-
+```
 
 ### 2. `seguros.py`
 - Utiliza estructuras condicionales anidadas
