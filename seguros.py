@@ -21,7 +21,7 @@ else:
         presupuesto = float(presupuesto_input)
 
         if presupuesto > 100000:
-            print("Cliente ACEPTADO.")
+            print("Cliente ACEPTADO!!")
         else:
-            print("Cliente RECHAZADO.")
+            print("Cliente RECHAZADO")
 
