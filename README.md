@@ -1,63 +1,86 @@
 # Trabajo_integrador--Matematica
 
-# Sistema de Recomendación de Seguros para Automotores
+# Filtro Binario para Seguros Automotores
 
-## Descripción General
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
 
-Este sistema está diseñado para ayudar a los usuarios a elegir el seguro de automotor más adecuado según su presupuesto, la frecuencia con la que usan el vehículo y el tipo de actividad que realizan (urbana, rural o comercial).
+## Descripción del Proyecto
+Este proyecto contiene dos implementaciones diferentes de un sistema de filtrado de clientes para seguros automotores, basado en:
+1. **Circuitos lógicos digitales** (Álgebra de Boole)
+2. **Estructuras condicionales anidadas** (Lógica procedural)
 
-A través de un sistema interactivo por consola, el programa guía al usuario ingresando información clave y luego recomienda un plan personalizado entre diferentes aseguradoras y niveles de cobertura. Ideal para quienes buscan tomar decisiones informadas y eficientes sin complicaciones.
+Ambas implementaciones determinan la aceptación o rechazo de clientes según tres criterios:
+- Estado en Veraz
+- Tipo de uso (comercial/personal)
+- Presupuesto (para uso personal)
 
----
-
-# Documentación del Programa
-
-## Funcionamiento
-1. Ingresa tu presupuesto mensual (mínimo **$45,000**).
-2. Selecciona la **frecuencia de uso**: `ALTA`, `MEDIA` o `BAJA`.
-3. Selecciona el **tipo de actividad**: `RURAL`, `URBANA` o `COMERCIAL`.
-4. El sistema evalúa y devuelve una **recomendación personalizada** de aseguradora y plan.
-
-## Aseguradoras Disponibles
-- **La gente aseguradora SA**
-- **La Caja de ahorro y seguro**
-- **Golden Seguros SRL**
-
-## Planes Disponibles
-1. **Terceros cobertura C** (Básico)  
-   Daños a terceros. Cobertura mínima obligatoria.
-2. **Todo riesgo parcial** (Intermedio)  
-   Cobertura amplia con franquicias.
-3. **Todo riesgo** (Completo)  
-   Cobertura total, incluye asistencia en viaje y beneficios extra.
-
-## Requisitos
+## Estructura del Proyecto
 ```bash
-Python 3.11
+.
+├── circuito_logico_seguros.py # Versión con simulación de circuito lógico
+├── seguros.py # Versión con estructura condicional clásica
+└── README.md # Documentación del proyecto
 ```
 
-## Ejecución
+## Características Principales
+### 1. `circuito_logico_seguros.py`
+- Implementa un circuito digital usando compuertas lógicas booleanas
+- Estructura:
+  ```python
+  salida = (
+      ((presupuesto and not comercial)  # AND1
+       or comercial)                    # OR 
+      and not veraz                     # AND_FINAL
+  )
+
+- Diagrama lógico:
 ```bash
+    VERAZ ───[NOT]───────────────────┐
+                                     AND_FINAL ─── Salida
+    COMERCIAL ────────────────┐      │
+         │                    OR ────┘
+         └─[NOT]─┐            │
+                  AND1 ───────┘        
+    PRESUPUESTO ───┘
+```
+
+### 2. `seguros.py`
+- Utiliza estructuras condicionales anidadas
+- Flujo de decisión:
+```python
+if veraz → Rechazar
+else:
+    if comercial → Aceptar
+    else:
+        if presupuesto > 100000 → Aceptar
+        else → Rechazar
+```
+
+## Instalación y uso
+1. Requisitos:
+- Python 3.8 o superior
+- No se requieren dependencias externas
+2. Ejecución:
+```bash
+# Versión con circuito lógico
+python circuito_logico_seguros.py
+
+# Versión condicional
 python seguros.py
 ```
+## Fundamentos Matemáticos
+El proyecto aplica:
 
-## Ejemplo de Uso
-```bash
-------------------------------------------------------------------
-Bienvenido al Sistema de Recomendación de Seguros para Automotores
-------------------------------------------------------------------
-Ingrese el monto mensual disponible a pagar: 100000
-Ingrese la frecuencia de uso [ALTA] [MEDIA] [BAJA]: MEDIA  
-Ingrese el tipo de actividad [RURAL] [URBANA] [COMERCIAL]: URBANA
-Le recomendamos contratar La gente aseguradora SA con el plan Todo riesgo parcial.
-```
+**Álgebra de Boole**:
+- Operadores lógicos: AND, OR, NOT
+- Tablas de verdad
 
-## Notas
-- **Presupuesto mínimo requerido:** $45.000 (pesos).
-- **Formato de entrada:**
-  - Frecuencia: `ALTA`, `MEDIA` o `BAJA` (escrito en MAYÚSCULAS).
-  - Actividad: `RURAL`, `URBANA` o `COMERCIAL` (también en MAYÚSCULAS).
-- Si el presupuesto no alcanza el mínimo, el programa termina indicando que no hay planes disponibles.
+**Lógica proposicional**:
+- Proposiciones compuestas
+- Implicaciones lógicas
+
+**Comparaciones numéricas**:
+- Operadores relacionales (>)
 
 ---
 
