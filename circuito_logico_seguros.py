@@ -1,5 +1,5 @@
 print("""---------------------------------------------------------------------------------------
-Simulador de circuito lógico del Filtro Binario de clientes de Seguros para Automotores
+Simulador de circuito lógico del Filtro de clientes de Seguros para Automotores
 ---------------------------------------------------------------------------------------""")
 
 # Preguntas al cliente (ENTRADAS)

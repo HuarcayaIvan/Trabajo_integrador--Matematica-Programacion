@@ -1,5 +1,5 @@
 print("""------------------------------------------------------------------
-Bienvenido al Filtro Binario de clientes de Seguros para Automotores
+Bienvenido al Filtro de clientes de Seguros para Automotores
 ------------------------------------------------------------------""")
 
 # Preguntar si el cliente figura en Veraz
